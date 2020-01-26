@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="../band-sprint-one/styles/style.scss">
+    <link rel="stylesheet" href="../band-sprint-one/scss/main.css">
 </head>
 <body>
     <header class="header">
-        <h1 class="logo">BANDSITE</h1>
-            <nav class="header__nav">
-                <ul class="header__list">
-                    <li class="header__nav__item">Biography</li>
-                    <li class="header__nav__item">Shows</li>
-                </ul>
-            </nav>
+        <h1 class="logo"><img src="./assets/Logo/Logo-bandsite.svg" alt="" class="logo__image"></h1>
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__nav__item nav-bio">Biography</li>
+                <li class="header__nav__item nav-show">Shows</li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section class="hero">
@@ -23,50 +23,84 @@
         </section>
         <section class="about">
             <h2 class="about__heading">About The Musicians</h2>
-            <div class="about__img--wrapper">
-            <img src="" alt="" class="about__img">
-            <div class="about__quote--block">
+            <div class="about__img-wrapper">
+                <img src="../band-sprint-one/assets/Images/about-image.jpg" alt="" class="about__img">
+            </div>
+            <div class="about__quote-block">
                 <div class="quote">“We are more comfortable with not fighting what comes naturally. Before we might have thought, ‘We need to be smarter than this’”</div>
                 <span class="quote__author">- Xavier de Rosnay</span>
             </div>
             <div class="about__info">
                 <h3 class="about__info__header">Xavier de Rosnay & Gaspard Augé</h3>
-                <div class="about__info__paragraph--one">Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.</div>
-                <div class="about__info__paragraph--two">Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.</div>
+                <div class="about__info__paragraph-one">Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.</div>
+                <div class="about__info__paragraph-two">Xavier De Ronsay and Gaspard Augé had a few mutual friends, who happened to run a record label, seeking tracks for a compilation. With an immediate connection, the pair decided to try their hand at making a song. That’s when they created their breakout single, We Are Your Friends – a feel-good, funk-filled, instant anthem that lost the remix contest, but won the attention of Pedro Winter, director of the newly founded Ed Banger Records, who boasted Daft Punk as former clients. One week later, they were in his office, signing a record deal.</div>
             </div>
             </div>
         </section>
         <section class="gallery">
-            <h2 class="gallery__header"></h2>
+            <h2 class="gallery__header">Photo Gallery</h2>
             <div class="gallery__img-wrapper">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
+                <img class="gallery__image" src="../band-sprint-one/assets/Images/Photo-gallery-1.jpg" alt="">
+                <img class="gallery__image" src="../band-sprint-one/assets/Images/Photo-gallery-2.jpg" alt="">
+                <img class="gallery__image" src="../band-sprint-one/assets/Images/Photo-gallery-3.jpg" alt="">
+                <img class="gallery__image" src="../band-sprint-one/assets/Images/Photo-gallery-4.jpg" alt="">
+                <img class="gallery__image" src="../band-sprint-one/assets/Images/Photo-gallery-5.jpg" alt="">
+                <img class="gallery__image" src="../band-sprint-one/assets/Images/Photo-gallery-6.jpg" alt="">
+                <img class="gallery__image" src="../band-sprint-one/assets/Images/Photo-gallery-7.jpg" alt="">
+                <img class="gallery__image" src="../band-sprint-one/assets/Images/Photo-gallery-8.jpg" alt="">
+                <img class="gallery__image" src="../band-sprint-one/assets/Images/Photo-gallery-9.jpg" alt="">
             </div>
         </section>
         <footer>
-            <div class="footer__wrapper">
-                <h4 class="footer__header"></h4>
-                <i></i>
-                <i></i>
-                <i></i>
-                <div class="footer__management">
-                    <div class="management__name"></div>
-                    <div class="management__company"></div>
+            <div class="footer">
+                <div class="footer__social">  
+                    <h4 class="footer__header">Get In Touch</h4>
+                    <div class="icon-wrapper">
+                        <img src="../band-sprint-one/assets/Icons/SVG/Icon-instagram.svg" ></i>
+                        <img src="../band-sprint-one/assets/Icons/SVG/Icon-facebook.svg"></img>
+                        <img src="../band-sprint-one/assets/Icons/SVG/Icon-twitter.svg"></img>
+                    </div>
+                    <h1 class="footer__logo"><img src="./assets/Logo/Logo-bandsite.svg" alt="" class="logo__image"></h1>
                 </div>
-                <div class="footer__address">
-                    <div class="address__one"></div>
-                    <div class="address__two"></div>
+                <div class="footer__info">
+                    <div class="footer__section">
+                        <div class="footer__management">
+                            <div class="footer__name">Richard Rovner</div>
+                            <div class="footer__company">The Bees Knees Management</div>
+                        </div>
+                        <address class="footer__address">
+                            <div class="footer__address-one">460 King Street West</div>
+                            <div class="footer__address-two">Toronto, Ontario M5V 1L7</div>
+                        </address>   
+                        <div class="email__info">info@thebeesknees.com</div>
+                    </div>
+                    <div class="footer__section">
+                        <div class="footer__management">
+                            <div class="footer__name">Marsha Vlasic</div>
+                            <div class="footer__company">Artist Group International</div>
+                        </div>
+                        <div class="footer__booking">Booking Agent for<br>US / South America / Japan
+                        </div>
+                        <div class="email">    
+                            <div class="email__info">marsha.vlasic@artistgrp.com</div>
+                        </div>
+                    </div>
+                    <div class="footer__section">
+                        <div class="footer__management">
+                            <div class="footer__name">Russel Warby</div>
+                            <div class="footer__company">William Morrir Entertainment</div>
+                        </div>
+                        <div class="footer__booking">Booking Agent for<br>UK / EU / AU</div>
+                        <div class="email__info">RLW@wmeentertainment.com</div>
+                    </div>
                 </div>
-                <!-- div.footer__ RE DO FOOTER ACCORDING TO COMPANY INFO -->
+                <div class="footer__copywright">Copyright The Bees Knees © 2018<br>All Rights Reserved
+                </div>
             </div>
         </footer>
     </main>
 </body>
 </html>
+
+<!-- flex 1 1 50% from mobile to tablet - flex basis helps  -->
+<!-- lock svg icons to 50px -->
