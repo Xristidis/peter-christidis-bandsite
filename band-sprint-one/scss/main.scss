@@ -1,3 +1,16 @@
+/* NOTES
+
+- could have used SCSS mixins a lot more. Still getting used to using scss so I found myself styling normally and then refactoring with scss later. Hopefully with more practice I will create more mixins when starting to save myself more time i.e combining flexbox attributes or font size mixins. 
+
+- the change in desktop dimension to 1200px scewed the mesurments for the desktop markup so it was eyed out instead of following exact pixel spacings. Tried to recalculate to the best of my ability. 
+
+- with more time, additional media queries could have been added to ensure smoother breakpoints. 
+
+Looking forward to part 2.
+Thank you! 
+*/
+
+// ACCESSIBILITY, MARGIN/PADDING & BROWSER COMPATIBILITY SNIPPET 
 html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:0 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
 
 
@@ -25,6 +38,16 @@ h1,h2 {
 
 body {
     font-family: "avenir";
+    cursor: default;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+    &:hover {
+        opacity: .7;
+    }
 }
 
 .logo {
@@ -32,6 +55,9 @@ body {
     height: 50%;
     @include tablet {
         margin-left: 5%;
+    }
+    @include desktop {
+        margin-left: 120px;
     }
 }
 
@@ -75,18 +101,27 @@ body {
             display: flex;
             align-items: flex-end;
             }
+            @include desktop {
+                width: 15%;
+                margin-left: 56px;
+            }
         
             &__item {
                 width: 50%;
                 height: 100%;
                 text-align: center;
-                padding-top: 2%;
+                padding: 2% 2% 0 2%;
                 color: $white-color;
                 @include tablet {
                     width: auto;
                     height: 100%;
-                    padding-top: 0%;
+                    padding: 0% 2% 0 2%;
                     padding-bottom: 0%;
+                }
+                &:hover {
+                    cursor: pointer;
+                    color: $white-color;
+                    opacity: .5;
                 }
             }
         }
@@ -95,6 +130,12 @@ body {
 .nav-bio {
     border-bottom: solid 4px #fff;
     font-family: "avenir-demi-bold";
+}
+
+.nav-show {
+    &:hover {
+        border-bottom: solid 4px #fff;
+    }
 }
 
 .hero {
@@ -107,8 +148,11 @@ body {
     @include tablet {
         height: 400px;
     }
+    @include desktop {
+        height: 670px;
+    }
     &__heading {
-        color: white;
+        color: $white-color;
         width: 90%;
         font-size: 1.5rem;
         margin: 0 0 0 5%;
@@ -117,19 +161,31 @@ body {
         @include tablet {
             font-size: 3.5rem;
         }
+        @include desktop {
+            margin: 0 0 0 120px;
+        }
     }
 }
 
 .about {
     width: 90%;
+    max-width: 1200px;
     margin: auto;
     display: flex;
     flex-direction: column;
+    @include desktop {
+        width: auto;
+        margin: auto;
+    }
     &__heading {
         margin: 11% 0 10% 0;
         @include tablet {
-            font-size: 3rem;
+            font-size: 2.1rem;
             margin: 8% 0 5% 0;
+        }
+        @include desktop {
+            font-size: 2.1rem;
+            margin: 48px 0 48px 120px;
         }
     }
     &__img-wrapper {
@@ -137,12 +193,21 @@ body {
         @include tablet {
             height: auto;
         }
+        @include desktop {
+            width: 775px;
+            height: auto;
+            margin: auto;
+        }
     }
     &__img {
         width: 100%;
         height: 100%;
         @include tablet {
             height: 362px;
+        }
+        @include desktop {
+            height: 100%;
+            width: 100%;
         }
     }
     &__quote-block {
@@ -152,6 +217,11 @@ body {
             margin: 5% 0 8% 0;
             font-size: 1.5rem;
         }
+        @include desktop {
+            margin: 48px auto 56px;
+            font-size: 1.5rem;
+            width: 775px;
+        }
     }
     &__quote {
         padding-bottom: 9%;
@@ -159,9 +229,15 @@ body {
         @include tablet {
             padding-bottom: 5%;
         }
+        @include desktop {
+            padding-bottom: 40px;
+        }
     }
     &__quote-author {
         font-size: .9rem;
+        @include desktop {
+            font-size: 1rem;
+        }
     }
     &__info {
         @include tablet {
@@ -170,6 +246,10 @@ body {
             width: 100%;
             justify-content: space-between;
         }
+        @include desktop {
+            width: 775px;
+            margin: auto;
+        }
         &__header {
             font-size: 1rem;
             font-family: "avenir-demi-bold";
@@ -177,6 +257,9 @@ body {
             @include tablet {
                 font-size: 1.5rem;
                 width: 100%;
+            }
+            @include desktop {
+                padding: 0 0 32px 0;
             }
         }
         &__paragraph {
@@ -188,22 +271,37 @@ body {
                 font-size: 0.95rem;
                 width: 49%;
             }
+            @include desktop {
+                padding-bottom: 48px;
+                font-size: 0.9rem;
+                width: 48%;
+            }
         }
     }
 }
 
 .gallery {
     width: 90%;
+    max-width: 1200px;
     margin: auto;
     padding: 7% 0;
     @include tablet {
         padding: 5% 0;
     }
+    @include desktop {
+        width: auto;
+        margin: auto;
+        padding: 48px 120px 40px;
+    }
     &__header {
         padding: 2.5% 0 2.5% 0;
         @include tablet {
             padding: 0 0 3.5% 0;
-            font-size: 3.5rem;
+            font-size: 2.1rem;
+        }
+        @include desktop {
+            padding: 0 0 64px 0;
+            font-size: 2.1rem;
         }
     }
     &__img-wrapper {
@@ -220,10 +318,19 @@ body {
     &__image {
         width: 100%;
         padding: 2.5% 0;
+        &:hover {
+            opacity: .7;
+            cursor: pointer;
+        }
         @include tablet {
             width: 216px;
             height: 126px;
             padding: 1.5% 0%;
+        }
+        @include desktop {
+            padding: 0 0 20px 0;
+            width: 305px;
+            height: auto;
         }
     }
 }
@@ -247,6 +354,10 @@ footer {
     @include tablet {
         width: 90%;
     }
+    @include desktop {
+        padding: 0 120px 0 120px;
+        width: auto;
+    }
     &__social {
         display: flex;
         flex-direction: column;
@@ -261,6 +372,10 @@ footer {
             justify-content: space-between;
             padding-top: 7%;
         }
+        @include desktop {
+            height: auto;
+            padding: 48px 0 0 0;
+        }
     }
     &__logo {
         display: none;
@@ -268,10 +383,16 @@ footer {
             display: inline-block;
             padding-left: 15%;
         }
+        @include desktop {
+            padding-left: 47%;
+        }
     }
     &__header {
         font-size: 2.4rem;
         font-family: "avenir-bold";
+        @include desktop {
+            font-size: 2.1rem;
+        }
     }
     &__info {
         height: 80%;
@@ -285,6 +406,10 @@ footer {
             flex-direction: row;
             justify-content: space-between;
             font-size: 1rem;
+        }
+        @include desktop {
+            font-size: .8rem;
+            width: 67%;
         }
     }
     &__section {
@@ -312,6 +437,9 @@ footer {
             padding: 45px 0 30px 0;
             font-size: 1rem;
         }
+        @include desktop {
+            font-size: .9rem;
+        }
     }
     &__booking {
         @include tablet {
@@ -324,6 +452,9 @@ footer {
         @include tablet {
             padding: 35px 0 40px 0;
             font-size: 1rem;
+        }
+        @include desktop {
+            font-size: .9rem;
         }
     }
 }
@@ -340,10 +471,17 @@ footer {
         justify-content: space-around;
         align-items: center;
     }
+    @include desktop {
+        width: 15%;
+    }
 }
 
 .icon-image {
     height: 130%;
+    &:hover {
+        opacity: .7;
+        cursor: pointer;
+    }
     @include tablet {
         height: auto;
     }
