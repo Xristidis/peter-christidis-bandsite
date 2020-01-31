@@ -997,6 +997,168 @@ footer {
   }
 }
 
+.comments {
+  height: 1200px;
+}
+
+.comments__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 90%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+}
+
+.comments__header {
+  padding: 2.5% 0 2.5% 0;
+  height: 5%;
+}
+
+@media screen and (min-width: 768px) {
+  .comments__header {
+    padding: 0 0 3.5% 0;
+    font-size: 2.1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .comments__header {
+    padding: 0 0 64px 0;
+    font-size: 2.1rem;
+  }
+}
+
+.comments__new {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  height: 30%;
+}
+
+.comments__img-wrapper {
+  width: 20%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.comments__photo {
+  background-image: url(../assets/Images/Mohan-muruge.jpg);
+  background-position: inherit;
+  background-size: cover;
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+}
+
+.comments__text {
+  width: 78%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.comments__name-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 20%;
+}
+
+.comments__label {
+  color: #AFAFAF;
+  font-family: "avenir-demi-bold";
+  font-size: .9rem;
+}
+
+.comments__name-input {
+  height: 50px;
+  border-radius: 5px;
+  border: solid;
+}
+
+.comments__comment-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 40%;
+}
+
+.comments__comment-input {
+  height: 82%;
+  border: solid;
+  border-radius: 3%;
+}
+
+.comments__button {
+  background-color: #323232;
+  font-family: "avenir-demi-bold";
+  color: #ffffff;
+  border-radius: 5px;
+  height: 18%;
+  margin-bottom: 10%;
+}
+
+@media screen and (min-width: 768px) {
+  .comments__button {
+    height: 50%;
+    width: 25%;
+    margin: auto 0;
+  }
+}
+
+.comments__past {
+  height: 20%;
+}
+
 .show-hero {
   background-image: url(../assets/Images/show-hero.jpg);
   background-position: center;
@@ -1197,6 +1359,7 @@ footer {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: end;
+    border-bottom: none;
   }
 }
 
