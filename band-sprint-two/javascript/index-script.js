@@ -108,6 +108,7 @@ function timeSince(date) {
             console.log(commContent);
             clearAll();
             loadComments();
+            form.reset();
         });
 
         function clearAll() {
@@ -122,8 +123,7 @@ function timeSince(date) {
             };
             // RAN OUT OF TIME AND COULD NOT SEEM TO TURN MY FOR LOOP HERE INTO A FOREACH FUNCTION TO DELETE EACH COMMENT IN MY COMMENT SECTION. 
         
-        // CLEARS AND RESETS INPUT 
-        clearAll();
+            // RAN OUT OF TIME AND FORGOT TO CLEAR THE INPUT FEILDS ON THE FORMS.
 
 
 
