@@ -1,6 +1,14 @@
-const bandSite_API = "https://project-1-api.herokuapp.com";
+const bandSite_API = "peters_api_key"
 
-
+function getFunc(param) {
+let sortArr = []
+      param.forEach(i => {
+        sortArr.push(i)
+      })
+      let revArr = sortArr.reverse();
+      console.log(revArr); 
+      loadComments(revArr);
+    }
 /// sort api array based on timestamp. 
 
 
@@ -52,11 +60,10 @@ function timeSince(date) {
   console.log(timeSince(new Date(Date.now()-aDay)));
   console.log(timeSince(new Date(Date.now()-aDay*2)));
   ///////////// AXIOS GET REQUEST WORKS ///////////////
-  axios.get('https://project-1-api.herokuapp.com/comments?api_key=32c5cf26-1bc6-4b6a-9a79-cf829fa9c21a', {
+  axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${bandSite_API}`, {
         
   }).then(res => {
-      console.log(res.data);
-      loadComments(res.data);
+    getFunc(res.data);
   }).catch(err => {
       console.log(err);
   });
@@ -96,7 +103,6 @@ function timeSince(date) {
           commContent.innerText = commContentObj.comment;
       });
   };
-  // loadComments();
   
   const form = document.querySelector('form');
   // SETS 'FORM' AS THE ELEMENT FOR THE LISTENER
@@ -106,23 +112,38 @@ function timeSince(date) {
       newCommObject.name = eventObj.target.name.value;
       // CREATES A TIME STAMP VALUE FOR WHEN THE SUBMIT BUTTON IS PRESSED
       newCommObject.date = Date.now();
-      newCommObject.content = eventObj.target.comment.value;
-      commContent.unshift(newCommObject);
-      console.log(commContent);
+      newCommObject.comment = eventObj.target.comment.value;
+      // commContent.unshift(newCommObject); ////////// NEED SYNTAX FOR API ARRAY
+      // console.log(commContent);
 
       ///////AXIOS POST REQUESTS///////////////
-      axios.post('https://project-1-api.herokuapp.com/comments?api_key=32c5cf26-1bc6-4b6a-9a79-cf829fa9c21a', {
+      axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${bandSite_API}`, {
         name: newCommObject.name,
         comment: newCommObject.comment
     }).then(res => {
-        console.log(res.data);
-        loadComments();/////////////////
+        axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${bandSite_API}`, {
+          
+        }).then(res => {
+            // let sortArr = []
+            // res.data.forEach(i => {
+            //   sortArr.push(i)
+            // })
+            // let revArr = sortArr.reverse(); ///// CHANGE THIS TO SORT BY TIMESTAMP ****
+            // console.log(revArr); 
+            // res.data.sort 
+            // console.log(res.data);
+            getFunc(res.data);
+            // loadComments(revArr);
+        }).catch(err => {
+            console.log(err);
+        });
+        console.log(res);
+        // loadComments(res);/////////////////
     }).catch(err => {
         console.log(err);
     });
     /////////////////////////////////////////////
       clearAll();
-      loadComments();
       form.reset();
   });
 

@@ -435,17 +435,19 @@ a {
   margin: 0 0 0 5%;
   font-family: "avenir-bold";
   line-height: 1.5;
+  max-width: 250px;
 }
 
 @media screen and (min-width: 768px) {
   .hero__heading {
     font-size: 3.5rem;
+    max-width: 600px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .hero__heading {
-    margin: 0 0 0 120px;
+    margin: 0 600px 0 120px;
   }
 }
 
@@ -1530,7 +1532,7 @@ input[type=text]::focus, select::focus, textarea::focus {
   .tour__wrapper {
     height: 100px;
     width: 90%;
-    max-width: 700px;
+    max-width: 775px;
     margin: 0 auto 0;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -1613,12 +1615,6 @@ input[type=text]::focus, select::focus, textarea::focus {
   font-size: .9rem;
 }
 
-@media screen and (min-width: 768px) {
-  .date__input {
-    display: none;
-  }
-}
-
 .date__title {
   font-family: "avenir-demi-bold";
 }
@@ -1629,22 +1625,10 @@ input[type=text]::focus, select::focus, textarea::focus {
   font-size: .9rem;
 }
 
-@media screen and (min-width: 768px) {
-  .venue__input {
-    display: none;
-  }
-}
-
 .location__input {
   color: #AFAFAF;
   font-family: "avenir-demi-bold";
   font-size: .9rem;
-}
-
-@media screen and (min-width: 768px) {
-  .location__input {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 768px) {

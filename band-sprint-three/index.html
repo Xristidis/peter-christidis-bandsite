@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../band-sprint-two/scss/main.css">
+    <title>BandSite</title>
+    <link rel="stylesheet" href="../band-sprint-three/scss/main.css">
 </head>
 <body>
     <header class="header">
@@ -23,7 +23,7 @@
     </header>
     <main>
         <section class="hero">
-            <h1 class="hero__heading">Gaspard Auge &<br>Xavier de Rosnay</h1>
+            <h1 class="hero__heading">Gaspard Auge & Xavier de Rosnay</h1>
         </section>
         <section class="about">
             <div class="about__opening">
@@ -66,16 +66,16 @@
                     <div class="comments__text">
                         <div class="comments__name-area">
                             <label for="" class="comments__label">NAME</label>
-                            <input type="text" name="name" placeholder="Add your name here" maxlength="25" class="comments__name-input">
+                            <input type="text" name="name" required placeholder="Add your name here" maxlength="25" class="comments__name-input">
                         </div>
                         <div class="comments__comment-area">
                             <label for="" class="comments__label">COMMENT</label>
-                            <textarea type="text" name="comment" placeholder="Add a new comment" maxlength="120" size="30" rows="4" width="48" height="48" class="comments__comment-input"></textarea>
+                            <textarea type="text" name="comment" required placeholder="Add a new comment" maxlength="120" size="30" rows="4" width="48" height="48" class="comments__comment-input"></textarea>
                         </div>
                         <input type="submit" value="COMMENT" class="comments__button">
                     </div>
                 </form>
-                <div class="comments__past-wrapper" id="comments__past-wrapper">
+                <div class="comments__past-wrapper" id="comments__past-wrapper"></div>
             </div>
         </section>
         <footer>
