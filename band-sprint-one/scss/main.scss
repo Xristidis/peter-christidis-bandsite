@@ -115,7 +115,7 @@ a {
                 @include tablet {
                     width: auto;
                     height: 100%;
-                    padding: 0% 2% 0 2%;
+                    padding: 0% 3% 0 3%;
                     padding-bottom: 0%;
                 }
                 &:hover {
@@ -487,4 +487,35 @@ footer {
     }
 }
 
-    
+// SHOW PAGE DIFFERENT STYLING
+
+.show {
+    &__hero {
+    background-image: url(../assets/Images/hero-image.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 472px;
+    display: flex;
+    align-items: center;
+        @include tablet {
+            height: 400px;
+        }
+        @include desktop {
+            height: 670px;
+        }
+    }
+    &__heading {
+        color: #ffffff;
+        width: 90%;
+        font-size: 2.1rem;
+        margin: auto;
+        font-family: "avenir-bold";
+        line-height: 1.5;
+        @include tablet {
+            font-size: 3.5rem;
+        }
+        @include desktop {
+            margin: 0 0 0 120px;
+        }
+    }
+}
